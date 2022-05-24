@@ -14,7 +14,7 @@ const DATETIME_TARGET = NOW_IN_MS + FOUR_DAYS_IN_MS
 const IndexPage = () => (
   <Layout title="OnlyAds">
   	<Splash>
-  		<img src="/oa.svg" alt="onlyads logo"
+  		<img src="oa.svg" alt="onlyads logo"
   			className={'cursor-pointer object-contain h-12 w-12 mb-2 transition duration-125 transform hover:scale-125'}
   			/>
     	<h1 className={styles.message}>Coming Soon</h1>
