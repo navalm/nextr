@@ -42,10 +42,10 @@ const ShowCounter = ({ days, hours, minutes, seconds }: any) => {
 }
 
 
-const Countdown = ({ targetDate }: any) => {
-  const [days, hours, minutes, seconds] = useCountdown(targetDate)
+const Countdown = ({ until }: any) => {
+  const [days, hours, minutes, seconds] = useCountdown(until)
 
-  if (days + hours + minutes + seconds <= 0) {
+  if (days + hours + minutes + seconds == 0) {
     return <ExpiredNotice />
   } else {
     return (

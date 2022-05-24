@@ -7,9 +7,7 @@ const styles = {
 	message: 'text-2xl md:text-7xl font-extrabold text-slate-900'
 }
 
-const FOUR_DAYS_IN_MS = 4 * 24 * 60 * 60 * 1000
-const NOW_IN_MS = new Date().getTime()
-const DATETIME_TARGET = NOW_IN_MS + FOUR_DAYS_IN_MS
+const TARGET_IN_MS = new Date(new Date('2022-05-30').getTime())
 
 const IndexPage = () => (
   <Layout title="OnlyAds">
@@ -18,7 +16,7 @@ const IndexPage = () => (
   			className={'cursor-pointer object-contain h-12 w-12 mb-2 transition duration-125 transform hover:scale-125'}
   			/>
     	<h1 className={styles.message}>Coming Soon</h1>
-    	<Countdown targetDate={DATETIME_TARGET} />
+    	<Countdown until={TARGET_IN_MS}/>
     </Splash>
   </Layout>
 )
