@@ -2,38 +2,33 @@ import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
+const styles = {
+	layout: 'h-screen w-screen'
+}
+
 type Props = {
   children?: ReactNode
   title?: string
+  footer?: boolean
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+const Layout = ({ children, title = 'This is the default title', footer = false}: Props) => (
+  <div className={styles.layout}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" />
     </Head>
     <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
     </header>
     {children}
     <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
+    	{footer && (
+        <span>I'm here to stay (Footer)</span>
+    	)}
     </footer>
   </div>
 )
